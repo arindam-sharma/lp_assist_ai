@@ -4,4 +4,4 @@ torch==2.2.2
 torchaudio==2.2.2
 torchvision==0.17.2
 Werkzeug==3.0.1
-gunicorn 22.0.0 
+gunicorn==22.0.0 
