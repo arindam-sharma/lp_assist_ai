@@ -54,8 +54,20 @@ def predict():
     predicts = (output > 0.5).float()
     print(predicts)
     predicts = predicts.flatten()
-    class_index = [i for i in range(0, 3) if predicts[i] == 1]
-    predicted_class = [class_names[j] for j in class_index]
+    # class_index = [i for i in range(0, 3) if predicts[i] == 1]
+    # predicted_class = [class_names[j] for j in class_index]
+    predicted_class = []
+    if predicts[0] == 1:
+        predicted_class.append('Bad Quality')
+    if predicts[1] == 0:
+        predicted_class.append('Spinal Cord Absent')
+    elif predicts[1] == 1:
+        predicted_class.append('Spinal Cord Present')
+    if predicts[2] == 0:
+        predicted_class.append('Fluid Absent')
+    elif predicts[2] == 1:
+        predicted_class.append('Fluid Present')
+
     predicted_classes = ' and '.join(predicted_class)
 
 
