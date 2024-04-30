@@ -18,7 +18,7 @@
             background-color: white;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h1 {
             color: #333;
@@ -54,23 +54,54 @@
         button:hover {
             background-color: #0069D9;
         }
-        .logo {
-            max-width: 1000px;
-            margin-top: 50px;
+        .caution-title {
+            font-size: 14px;
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .caution {
+            font-size: 11px;
+            color: #555;
+            text-align: center;
+        }
+        .instructions {
+            font-size: 14px;
+            color: #333;
+            margin-top: 20px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="{{ url_for('static', filename='assets/logo.jpeg') }}" alt="LP Assist Logo" class="logo">
         <h1>AI Assist for Ultrasound Guided Infant Lumbar Puncture</h1>
         <form method="POST" enctype="multipart/form-data" action="/predict">
             <div class="file-upload">
                 <img src="{{ url_for('static', filename='assets/camera.png') }}" alt="Camera Icon" class="camera-icon" onclick="document.querySelector('input[type=file]'). click();">
                 <input type="file" name="image">
+                <button type="submit">Identify</button>
             </div>
-            <button type="submit">Identify</button>
+            
         </form>
+
+        <div class="caution-title">Note</div>
+        <div class="caution">Your uploaded image will be temporarily stored on a secure cloud server and deleted right after you click the 'Reset' button. Please ensure that there is no patient-identifying information in the image.</div>
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Upload an image of the ultrasound.</li>
+                <li>Click on "Identify" to process the image.</li>
+                <li>The model will evaluate the image and will check for spinal cord and/or fluid.</li>
+                <li>The model will also check if the image qualyt is insufficient for evaluation.</li>
+                <li>Ensure you follow the caution instructions before uploading.</li>
+            </ol>
+        </div>
     </div>
 </body>
 </html>
+
+
+<!-- make sure no patient identifying image is included 
+    https://lp-assist-ai-ks3s.onrender.com/ -->

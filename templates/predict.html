@@ -49,10 +49,6 @@
         button:hover {
             background-color: #0069D9;
         }
-        .logo {
-            max-width: 200px;
-            margin-bottom: 10px;
-        }
         hr {
             border: none;
             border-top: 1px solid #ccc;
@@ -62,13 +58,12 @@
 </head>
 <body>
     <div class="container">
-        <img src="{{ url_for('static', filename='assets/logo_predict.jpeg') }}" alt="LP Assist Logo" class="logo">
         <hr>
         <h1>Prediction Results</h1>
         <hr>
-        <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Uploaded Image">
-        <p>Predicted Classes: {{ predicted_class }}</p>
-        <button onclick="window.location.href='/'">Upload Another</button>
+        <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Provided Image">
+        <p>Identified Classes: {{ predicted_class }}</p>
+        <button onclick="window.location.href='/'">Reset</button>
     </div>
 </body>
 </html>
