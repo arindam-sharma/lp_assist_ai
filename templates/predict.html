@@ -54,6 +54,9 @@
             border-top: 1px solid #ccc;
             margin: 15px 0;
         }
+        .feedback-link {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -64,6 +67,9 @@
         <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Provided Image">
         <p>Identified Classes: {{ predicted_class }}</p>
         <button onclick="window.location.href='/'">Reset</button>
+        <div class="feedback-link">
+        Feedback/Collaborate? Fill out the form below. <br><a href="https://docs.google.com/forms/d/e/1FAIpQLSd8Dhh18xS1f9ohTncJZxkTDvTW5fQma4HllUjDtqBVdVICpA/viewform" target="_blank">Join Our Quest for Better AI – Give Feedback!</a>
+        <br>
     </div>
 </body>
 </html>

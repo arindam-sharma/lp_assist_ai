@@ -42,6 +42,9 @@
             height: 30px;
             cursor: pointer;
         }
+        .sample-image {
+            width: 450px;
+        }
         button {
             background-color: #007BFF;
             color: white;
@@ -87,17 +90,31 @@
         </form>
 
         <div class="caution-title">Note</div>
-        <div class="caution">Your uploaded image will be temporarily stored on a secure cloud server and deleted right after you click the 'Reset' button. Please ensure that there is no patient-identifying information in the image.</div>
+        <div class="caution">Your uploaded image will be temporarily stored on a secure cloud server and deleted right after you click the 'Reset' button. Please ensure that there is no patient-identifying information in the image.
+            <br>
+            This model is designed to evaluate ultrasound images obtained with a linear transducer that show a cross-section (axial view) of the lumbar spinal interspace in an infant (as shown below). It has not been tested for other probes, views, or age groups.
+            <br>
+            <br>
+            <img src="{{ url_for('static', filename='assets/sample.png') }}" alt="Sample Image" class="sample-image">
+        </div>
+
         <div class="instructions">
             <h3>Instructions:</h3>
             <ol>
-                <li>Upload an image of the ultrasound.</li>
+                <li>Upload an ultrasound image with given specifications.</li>
                 <li>Click on "Identify" to process the image.</li>
-                <li>The model will evaluate the image and will check for spinal cord and/or fluid.</li>
-                <li>The model will also check if the image qualyt is insufficient for evaluation.</li>
-                <li>Ensure you follow the caution instructions before uploading.</li>
+                <li>The model will evaluate the image and identify if the spinal cord and/or spinal fluid is present in the picture.</li>   
+                <li>The model will also check if the image quality is insufficient for evaluation.</li>
             </ol>
         </div>
+        <div>Please visit us at <a href="https://www.emergencymedicine.columbia.edu/education/innovation" target="_blank">The Department of Emergency Medicine at Columbia University Vagelos College of Physicians and Surgeons</a>.
+            <br>
+            <br>
+        <div class="caution">
+        <strong>The administrators of this website disclaim any liability for the data users upload or the consequences of its use. Users are solely responsible for ensuring that the content they submit complies with all applicable laws and regulations.</strong>
+        </div>
+    </div>
+
     </div>
 </body>
 </html>
